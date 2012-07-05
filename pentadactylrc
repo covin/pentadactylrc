@@ -7,8 +7,7 @@ set guioptions=Cs
 
 set newtab=all
 
-set mapleader=,
-map <\> <Leader>
+map , <Leader>
 
 " stop autocompletion on any type of open command
 set autocomplete=!/ex/(.*open),.?
