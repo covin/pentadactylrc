@@ -2,8 +2,6 @@
 
 colorscheme zenburn
 
-set defsearch=g.de
-
 set complete=sbl
 set guioptions=Cs
 
@@ -26,21 +24,21 @@ map <Leader><t>    :set showtabline=always<CR>
 
     " left hand tabbing with dvorak
     " go to next tab with <S-.>
-    noremap \> <C-n>
+    map -builtin \> <C-n>
     " go to next tab with <S-,>
-    noremap <lt> <C-p>
+    map -builtin <lt> <C-p>
     " toggeling between previous buffer
-    noremap \" <C-6>
+    map -builtin \" <C-6>
     " lb/fb goes to last/first tab
-    noremap ]b g$
-    noremap [b g^
+    map -builtin ]b g$
+    map -builtin [b g^
 " }}}"
 
 " quich access to firefox dialogs {{{
     " shortcut to firefox dialogs
     map <Leader>d :dialog<space>
     " show download dialog
-    noremap <A-d> :dialog downloads<CR>
+    map -builtin <A-d> :dialog downloads<CR>
 " }}}
 
 
@@ -49,7 +47,7 @@ map <Leader><t>    :set showtabline=always<CR>
     set cookielifetime=session
     map <Leader>c   :cookies<Space>
     map <A-c>       :cookies<Space><A-Tab>
-    noremap <Leader>cr  :sanitize cookies
+    map -builtin <Leader>cr  :sanitize cookies
 " }}}
 
 
@@ -66,18 +64,18 @@ map <Leader><t>    :set showtabline=always<CR>
     set noscript-list=address
     "noscript short-cuts
     "noscript-sites
-    noremap <Leader>ss  :set nss!=
+    map -builtin <Leader>ss  :set nss!=
     "noscript-tempsites
-    noremap <A-s>       :set nst!=<A-Tab>
-    noremap <Leader>st  :set nst!=
+    map -builtin <A-s>       :set nst!=<A-Tab>
+    map -builtin <Leader>st  :set nst!=
     " list tempsites
-    noremap <Leader>sl  :set nst<CR>
+    map -builtin <Leader>sl  :set nst<CR>
     " remove tempsites
-    noremap <Leader>sr  :ns-revoke<CR>
+    map -builtin <Leader>sr  :ns-revoke<CR>
     "noscript-object
-    noremap <Leader>so  :set nso!=<A-Tab>
+    map -builtin <Leader>so  :set nso!=<A-Tab>
     "noscript-untrusted
-    noremap <Leader>su  :set nsu!=<A-Tab>
+    map -builtin <Leader>su  :set nsu!=<A-Tab>
 " }}}
 
 group user
