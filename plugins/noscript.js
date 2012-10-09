@@ -267,7 +267,7 @@ group.options.add(["script"],
     {
         names: ["noscript-sites", "nss"],
         description: "The list of sites allowed to execute scripts",
-        action: function (add, sites) sites.length && noscriptOverlay.safeAllow(sites, add, false, -1),
+        action: function (add, sites) sites.length && window.noscriptOverlay.safeAllow(sites, add, false, -1),
         completer: function (context) completion.noscriptSites(context),
         has: function (val) Set.has(services.noscript.jsPolicySites.sitesMap, val) &&
             !Set.has(services.noscript.tempSites.sitesMap, val),
@@ -277,7 +277,7 @@ group.options.add(["script"],
     }, {
         names: ["noscript-tempsites", "nst"],
         description: "The list of sites temporarily allowed to execute scripts",
-        action: function (add, sites) sites.length && noscriptOverlay.safeAllow(sites, add, true, -1),
+        action: function (add, sites) sites.length && window.noscriptOverlay.safeAllow(sites, add, true, -1),
         completer: function (context) completion.noscriptSites(context),
         get set() services.noscript.tempSites.sitesMap
     }, {
