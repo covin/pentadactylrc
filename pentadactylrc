@@ -21,6 +21,10 @@ map <Leader><t>    :set showtabline=always<CR>
     map <A-n> gt
     map <A-b> gT
 
+		" benifit from tabclose setting, since it does not
+		" affect default mapping
+		map -builtin d :tabclose<CR>
+
     " left hand tabbing with dvorak
     " go to next tab with <S-.>
     map -builtin \> <C-n>
