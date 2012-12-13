@@ -12,15 +12,14 @@ map , <Leader>
 " stop autocompletion on any type of open command
 set autocomplete=!/ex/(.*open),.?
 
-"hide tabline
-map <Leader><n><t> :set showtabline=never<CR>
-map <Leader><t>    :set showtabline=always<CR>
+" toggle {{{
+    map -ex <Leader>tt    :set showtabline!=always,never
+    map -ex <Leader>tm    :set guioptions!=m
+ 		map -ex <Leader>tT    :set guioptions!=T
+" }}}
 
 
 " tabbing {{{
-    map <A-n> gt
-    map <A-b> gT
-
 		" benifit from tabclose setting, since it does not
 		" affect default mapping
 		map -builtin d :tabclose<CR>
@@ -32,7 +31,7 @@ map <Leader><t>    :set showtabline=always<CR>
     map -builtin <lt> <C-p>
     " toggeling between previous buffer
     map -builtin \" <C-6>
-    " lb/fb goes to last/first tab
+    " lb/fb goes to last/first tab (buffer)
     map -builtin ]b g$
     map -builtin [b g^
 " }}}"
@@ -41,7 +40,7 @@ map <Leader><t>    :set showtabline=always<CR>
     " shortcut to firefox dialogs
     map <Leader>d :dialog<space>
     " show download dialog
-    map -builtin <A-d> :dialog downloads<CR>
+    map -ex <Leader>dd :dialog downloads
 " }}}
 
 
@@ -62,23 +61,23 @@ map <Leader><t>    :set showtabline=always<CR>
     " ----- no-script integration ----- "
     :command ns-revoke -nargs=0
                 \ :set nst=
-                \ :echo "[no-script] temporary permissions has been revoked"
+                \ :echo "[no-script] temporary permissions have been revoked"
 
     set noscript-list=address
     "noscript short-cuts
     "noscript-sites
-    map -builtin <Leader>ss  :set nss!=
+    map -b <Leader>ss  :set nss!=
     "noscript-tempsites
-    map -builtin <A-s>       :set nst!=<A-Tab>
-    map -builtin <Leader>st  :set nst!=
+    map -b <A-s>       :set nst!=<A-Tab>
+    map -b <Leader>st  :set nst!=
     " list tempsites
-    map -builtin <Leader>sl  :set nst<CR>
+    map -b <Leader>sl  :set nst<CR>
     " remove tempsites
-    map -builtin <Leader>sr  :ns-revoke<CR>
+    map -b <Leader>sr  :ns-revoke<CR>
     "noscript-object
-    map -builtin <Leader>so  :set nso!=<A-Tab>
+    map -b <Leader>so  :set nso!=<A-Tab>
     "noscript-untrusted
-    map -builtin <Leader>su  :set nsu!=<A-Tab>
+    map -b <Leader>su  :set nsu!=<A-Tab>
 " }}}
 
 group user
