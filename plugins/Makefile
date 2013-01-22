@@ -2,7 +2,7 @@
 WGET     = wget
 WGET_OPT = 
 
-PLUGIN_BASE = http://dactyl.sourceforge.net/plugins/
+PLUGIN_BASE = http://5digits.org/plugins/
 
 plugins := $(wildcard *.js)
 updates := $(plugins:.js=.update)
