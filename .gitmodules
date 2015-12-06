@@ -1,3 +1,6 @@
 [submodule "colors/.zenburn"]
 	path = colors/.zenburn
 	url = http://github.com/covin/zenburn.penta
+[submodule "colors/.solarized"]
+	path = colors/.solarized
+	url = https://github.com/claytron/pentadactyl-solarized.git
